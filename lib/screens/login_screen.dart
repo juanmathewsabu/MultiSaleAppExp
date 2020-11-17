@@ -11,7 +11,8 @@ class LoginScreen extends StatelessWidget {
         children: [
           spacing(25.0, 25.0),
           //username
-          entryField('you@example.com', 'Email ID/Mobile Number'),
+          entryField('you@example.com', 'Email ID/Mobile Number',
+              prefixIcon: Icons.account_circle),
           spacing(10.0, 10.0),
           //password
           entryField('Password', 'Password',
