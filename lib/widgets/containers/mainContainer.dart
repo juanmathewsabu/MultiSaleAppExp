@@ -34,7 +34,7 @@ class MainContainer extends StatelessWidget {
                       EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 15),
                   child: Row(
                     children: [
-                      if (profilePicture != null)
+                      if ( profilePicture != null )
                         CircleAvatar(
                           backgroundImage: profilePicture,
                           radius: 30,
