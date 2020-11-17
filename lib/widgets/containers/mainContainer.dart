@@ -20,7 +20,9 @@ class MainContainer extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: backgroundImage,
+            image: backgroundImage != null
+                ? backgroundImage
+                : AssetImage("assets/images/blue_background.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -34,7 +36,7 @@ class MainContainer extends StatelessWidget {
                       EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 15),
                   child: Row(
                     children: [
-                      if ( profilePicture != null )
+                      if (profilePicture != null)
                         CircleAvatar(
                           backgroundImage: profilePicture,
                           radius: 30,
@@ -44,14 +46,15 @@ class MainContainer extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              margin: EdgeInsets.only(bottom: 6),
-                              child: Text(
-                                mainHeading,
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                            if (mainHeading != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 6),
+                                child: Text(
+                                  mainHeading,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
                               ),
-                            ),
                             if (subHeading != null)
                               Text(
                                 subHeading,
