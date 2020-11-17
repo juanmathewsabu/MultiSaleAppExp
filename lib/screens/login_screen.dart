@@ -14,7 +14,10 @@ class LoginScreen extends StatelessWidget {
           entryField('you@example.com', 'Email ID/Mobile Number'),
           spacing(10.0, 10.0),
           //password
-          entryField('Password', 'Password'),
+          entryField('Password', 'Password',
+              isPassword: true,
+              prefixIcon: Icons.lock,
+              suffixIcon: Icons.visibility),
           Container(margin: EdgeInsets.only(top: 25)),
           raisedButton('Sign In', Colors.red),
         ],
