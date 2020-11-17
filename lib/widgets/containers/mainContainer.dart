@@ -34,10 +34,11 @@ class MainContainer extends StatelessWidget {
                       EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 15),
                   child: Row(
                     children: [
-                      CircleAvatar(
-                        backgroundImage: profilePicture,
-                        radius: 30,
-                      ),
+                      if (profilePicture != null)
+                        CircleAvatar(
+                          backgroundImage: profilePicture,
+                          radius: 30,
+                        ),
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         child: Column(
@@ -51,11 +52,12 @@ class MainContainer extends StatelessWidget {
                                     color: Colors.white, fontSize: 20),
                               ),
                             ),
-                            Text(
-                              subHeading,
-                              style: TextStyle(
-                                  color: Color(0XFFabd5f7), fontSize: 14),
-                            ),
+                            if (subHeading != null)
+                              Text(
+                                subHeading,
+                                style: TextStyle(
+                                    color: Color(0XFFabd5f7), fontSize: 14),
+                              ),
                           ],
                         ),
                       )
