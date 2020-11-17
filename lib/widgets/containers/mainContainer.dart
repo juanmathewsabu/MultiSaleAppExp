@@ -20,7 +20,9 @@ class MainContainer extends StatelessWidget {
     return Container(
         decoration: BoxDecoration(
           image: DecorationImage(
-            image: backgroundImage,
+            image: backgroundImage != null
+                ? backgroundImage
+                : AssetImage("assets/images/blue_background.jpg"),
             fit: BoxFit.cover,
           ),
         ),
@@ -52,19 +54,21 @@ class MainContainer extends StatelessWidget {
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            Container(
-                              margin: EdgeInsets.only(bottom: 6),
-                              child: Text(
-                                mainHeading,
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 20),
+                            if (mainHeading != null)
+                              Container(
+                                margin: EdgeInsets.only(bottom: 6),
+                                child: Text(
+                                  mainHeading,
+                                  style: TextStyle(
+                                      color: Colors.white, fontSize: 20),
+                                ),
                               ),
-                            ),
-                            Text(
-                              subHeading,
-                              style: TextStyle(
-                                  color: Color(0XFFabd5f7), fontSize: 14),
-                            ),
+                            if (subHeading != null)
+                              Text(
+                                subHeading,
+                                style: TextStyle(
+                                    color: Color(0XFFabd5f7), fontSize: 14),
+                              ),
                           ],
                         ),
                       )
