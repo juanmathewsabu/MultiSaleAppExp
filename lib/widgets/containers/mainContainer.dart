@@ -33,11 +33,20 @@ class MainContainer extends StatelessWidget {
                   padding:
                       EdgeInsets.only(top: 50, left: 20, right: 20, bottom: 15),
                   child: Row(
-                    children: [
-                      CircleAvatar(
-                        backgroundImage: profilePicture,
-                        radius: 30,
-                      ),
+                    crossAxisAlignment: profilePicture == null
+                        ? CrossAxisAlignment.start
+                        : CrossAxisAlignment.end,
+                    children: <Widget>[
+                      profilePicture == null
+                          ? Icon(
+                              Icons.arrow_back_ios_sharp,
+                              color: Colors.white,
+                              size: 20.0,
+                            )
+                          : CircleAvatar(
+                              backgroundImage: profilePicture,
+                              radius: 30,
+                            ),
                       Container(
                         margin: EdgeInsets.only(left: 20),
                         child: Column(
