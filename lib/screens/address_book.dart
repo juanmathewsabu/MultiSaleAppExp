@@ -22,12 +22,14 @@ class AddressScreen extends StatelessWidget {
           margin: EdgeInsets.only(top: 70.0),
           child: Column(
             children: <Widget>[
-              Card(
-                margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
-                child: ListTile(
-                  title: Text(
-                    'Address 1',
-                    style: TextStyle(color: Colors.black),
+              Container(
+                child: Card(
+                  margin: EdgeInsets.symmetric(vertical: 10.0, horizontal: 20.0),
+                  child: ListTile(
+                    title: Text(
+                      'Address 1',
+                      style: TextStyle(color: Colors.black),
+                    ),
                   ),
                 ),
               ),
@@ -45,6 +47,16 @@ class AddressScreen extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+}
+
+class inputCard extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Expanded(
+      child:
+
     );
   }
 }
