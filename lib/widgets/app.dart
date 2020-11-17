@@ -10,8 +10,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         body: MainContainer(
           backgroundImage: AssetImage("assets/images/blue_background.jpg"),
-          mainHeading: 'Tovino Thomas',
-          subHeading: '+910022335566',
+          mainHeading: '',
           bodyContent: LoginScreen(),
         ),
       ),
