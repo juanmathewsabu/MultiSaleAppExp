@@ -9,6 +9,15 @@ import 'package:login_demo/widgets/controls/dropdownlist.dart';
 import 'package:flutter/material.dart';
 import '../widgets/containers/mainContainer.dart';
 
+Widget signUp() {
+  return Scaffold(
+    body: MainContainer(
+      backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+      bodyContent: signUpBody(),
+    ),
+  );
+}
+
 class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

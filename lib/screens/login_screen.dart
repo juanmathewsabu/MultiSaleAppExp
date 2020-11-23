@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/widgets/containers/mainContainer.dart';
 import 'package:login_demo/widgets/controls/inputs.dart';
 import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/controls/texts.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+
+Widget login() {
+  return Scaffold(
+    body: MainContainer(
+      backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+      bodyContent: loginScreen(),
+    ),
+  );
+}
 
 Widget loginScreen() {
   return Container(
