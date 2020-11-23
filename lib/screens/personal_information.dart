@@ -16,36 +16,82 @@ class PersonalInformation extends StatelessWidget {
           mainHeading: 'Personal Information',
           bodyContent: ListView(
             children: [
-              entryField(
+              textBox(
                 'First Name',
                 'First Name',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Last Name',
                 'Last Name',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Gender',
                 'Male',
-                suffixIcon: Icons.keyboard_arrow_down,
+                suffixIcon: Icon(
+                  Icons.keyboard_arrow_down,
+                ),
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'email@mail.com',
                 'Email',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 '+91 0022335566',
                 'Phone Number',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Password',
                 'Password',
                 isPassword: true,
+                suffixIcon: IconButton(
+                  icon: Icon(Icons.edit_outlined),
+                  onPressed: () {
+                    showDialog<Widget>(
+                      context: context,
+                      barrierDismissible: false, // user must tap button!
+                      builder: (BuildContext context) {
+                        return AlertDialog(
+                          content: SingleChildScrollView(
+                            child: ListBody(
+                              children: <Widget>[
+                                textBox(
+                                  'Password',
+                                  'Password',
+                                  isPassword: true,
+                                ),
+                                spacing(10.0, 10.0),
+                                textBox(
+                                  'Password',
+                                  'Password',
+                                  isPassword: true,
+                                ),
+                                spacing(10.0, 10.0),
+                                textBox(
+                                  'Password',
+                                  'Password',
+                                  isPassword: true,
+                                ),
+                              ],
+                            ),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              child: Text('Approve'),
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                              },
+                            ),
+                          ],
+                        );
+                      },
+                    );
+                  },
+                ),
               ),
               spacing(10.0, 10.0),
               checkbox(
