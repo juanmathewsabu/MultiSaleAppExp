@@ -30,90 +30,92 @@ class ProfileScreen extends StatelessWidget {
     CardContent(Icons.store_outlined, 'Favorite Stores'),
   ];
 
-  Container getRowContent(String heading, List list) {
-    return Container(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Text(
-              heading,
-              style: kProfilePageHeadings,
+  @override
+  Widget build(BuildContext context) {
+    Container getColumnContent(
+        {String heading,
+        String subHeading1,
+        IconData icon1,
+        String subHeading2,
+        IconData icon2,
+        Color color,
+        int count}) {
+      return Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                heading,
+                style: kProfilePageHeadings,
+              ),
             ),
-          ),
-          for (int i = 0; i < list.length; i = i + 2)
-            Row(
-              children: [
-                Expanded(
-                  child: ClickableContainer(
-                    onpress: () {},
-                    text: list[i].text,
-                    icon: list[i].icon,
-                  ),
-                ),
-                if (list[i + 1] != null)
-                  Expanded(
-                    child: ClickableContainer(
-                      onpress: () {},
-                      text: list[i + 1].text,
-                      icon: list[i + 1].icon,
-                    ),
-                  ),
-                //  ClickableContainer(),
-              ],
-            )
-        ],
-      ),
-    );
-  }
-
-  Container getColumnContent(
-      {String heading,
-      String subHeading1,
-      IconData icon1,
-      String subHeading2,
-      IconData icon2,
-      Color color,
-      int count}) {
-    return Container(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(5.0),
-            child: Text(
-              heading,
-              style: kProfilePageHeadings,
-            ),
-          ),
-          Container(
-            width: 155,
-            child: ClickableContainer(
-              onpress: () {},
-              text: subHeading1,
-              icon: icon1,
-              iconColor: null,
-            ),
-          ),
-          if (count == 2)
             Container(
               width: 155,
               child: ClickableContainer(
                 onpress: () {},
-                text: subHeading2,
-                icon: icon2,
-                iconColor: color,
+                text: subHeading1,
+                icon: icon1,
+                iconColor: null,
               ),
             ),
-        ],
-      ),
-    );
-  }
+            if (count == 2)
+              Container(
+                width: 155,
+                child: ClickableContainer(
+                  onpress: () {},
+                  text: subHeading2,
+                  icon: icon2,
+                  iconColor: color,
+                ),
+              ),
+          ],
+        ),
+      );
+    }
 
-  @override
-  Widget build(BuildContext context) {
+    Container getRowContent(String heading, List list) {
+      return Container(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                heading,
+                style: kProfilePageHeadings,
+              ),
+            ),
+            for (int i = 0; i < list.length; i = i + 2)
+              Row(
+                children: [
+                  Expanded(
+                    child: ClickableContainer(
+                      onpress: () {
+                        Navigator.pushNamed(context, '/address_book');
+                      },
+                      text: list[i].text,
+                      icon: list[i].icon,
+                    ),
+                  ),
+                  if (list[i + 1] != null)
+                    Expanded(
+                      child: ClickableContainer(
+                        onpress: () {},
+                        text: list[i + 1].text,
+                        icon: list[i + 1].icon,
+                      ),
+                    ),
+                  //  ClickableContainer(),
+                ],
+              )
+          ],
+        ),
+      );
+    }
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
