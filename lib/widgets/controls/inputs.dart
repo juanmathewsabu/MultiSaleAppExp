@@ -14,9 +14,12 @@ Widget entryField(hintText, labelText,
   );
 }
 
-Widget raisedButton(text, color) {
+Widget raisedButton(text, color, context) {
   return RaisedButton(
-    onPressed: () {},
+    onPressed: () {
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => AddressScreen()));
+    },
     child: Text(text),
     color: color,
   );

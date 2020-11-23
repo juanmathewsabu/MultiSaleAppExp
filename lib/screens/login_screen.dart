@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
               prefixIcon: Icons.lock,
               suffixIcon: Icons.visibility),
           Container(margin: EdgeInsets.only(top: 25)),
-          raisedButton('Sign In', Colors.red),
+          raisedButton('Sign In', Colors.red, context),
         ],
       ),
     );
