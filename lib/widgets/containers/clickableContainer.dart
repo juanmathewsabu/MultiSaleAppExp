@@ -4,12 +4,12 @@ class ClickableContainer extends StatelessWidget {
   final Function onpress;
   final IconData icon;
   final String text;
-  final Color iconcolor;
+  final Color iconColor;
   ClickableContainer(
       {@required this.onpress,
       @required this.icon,
       @required this.text,
-      this.iconcolor});
+      this.iconColor});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +33,7 @@ class ClickableContainer extends StatelessWidget {
                 Icon(
                   icon,
                   size: 35,
-                  color: iconcolor != null ? iconcolor : Colors.blue,
+                  color: iconColor != null ? iconColor : Colors.blue,
                 ),
                 SizedBox(
                   height: 10,

@@ -78,10 +78,18 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Container getColumnContent(String heading, List list) {
+  Container getColumnContent(
+      {String heading,
+      String subHeading1,
+      IconData icon1,
+      String subHeading2,
+      IconData icon2,
+      Color color,
+      int count}) {
     return Container(
       child: Column(
-        //crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(5.0),
@@ -90,14 +98,25 @@ class ProfileScreen extends StatelessWidget {
               style: kProfilePageHeadings,
             ),
           ),
-          Column(
-            children: [
-              for (int i = 0; i < list.length; i = i + 1)
-                getExpanded(list[i].text, list[i].icon)
-
-              //  ClickableContainer(),
-            ],
-          )
+          Container(
+            width: 155,
+            child: ClickableContainer(
+              onpress: () {},
+              text: subHeading1,
+              icon: icon1,
+              iconColor: null,
+            ),
+          ),
+          if (count == 2)
+            Container(
+              width: 155,
+              child: ClickableContainer(
+                onpress: () {},
+                text: subHeading2,
+                icon: icon2,
+                iconColor: color,
+              ),
+            ),
         ],
       ),
     );
@@ -114,6 +133,7 @@ class ProfileScreen extends StatelessWidget {
           mainHeading: 'Tovino Thomas',
           subHeading: '+910022335566',
           bodyContent: SingleChildScrollView(
+              child: Container(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -121,6 +141,23 @@ class ProfileScreen extends StatelessWidget {
                   height: 12,
                 ),
                 getRowContent('ACCOUNT SETTINGS', accountSettingList),
+                SizedBox(
+                  height: 15,
+                ),
+                getColumnContent(
+                    heading: 'HOSTING',
+                    subHeading1: 'Host your Store',
+                    icon1: Icons.home_filled),
+                SizedBox(
+                  height: 15,
+                ),
+                getColumnContent(
+                    heading: 'HELP & SUPPORT',
+                    subHeading1: 'How Kriips Works',
+                    icon1: Icons.flare_sharp,
+                    subHeading2: 'Feedback',
+                    count: 2,
+                    icon2: Icons.chat_bubble_outline),
                 SizedBox(
                   height: 15,
                 ),
@@ -132,9 +169,17 @@ class ProfileScreen extends StatelessWidget {
                 SizedBox(
                   height: 15,
                 ),
+                getColumnContent(
+                    heading: 'QUICK ACCESS',
+                    subHeading1: 'Terms &\nConditions',
+                    icon1: Icons.description_outlined,
+                    subHeading2: 'Logout',
+                    count: 2,
+                    icon2: Icons.power_settings_new,
+                    color: Color(0XFFFA2F95)),
               ],
             ),
-          ),
+          )),
         ),
       ),
     );
