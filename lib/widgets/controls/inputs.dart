@@ -56,10 +56,7 @@ Widget textBox(hintText, labelText,
 
 Widget raisedButton(text, color, context) {
   return RaisedButton(
-    onPressed: () {
-      Navigator.push(
-          context, MaterialPageRoute(builder: (context) => AddressScreen()));
-    },
+    onPressed: () {},
     child: Text(text),
     color: color,
   );
