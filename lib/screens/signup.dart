@@ -9,6 +9,15 @@ import 'package:login_demo/widgets/controls/dropdownlist.dart';
 import 'package:flutter/material.dart';
 import '../widgets/containers/mainContainer.dart';
 
+Widget signUp() {
+  return Scaffold(
+    body: MainContainer(
+      backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+      bodyContent: signUpBody(),
+    ),
+  );
+}
+
 class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -60,12 +69,12 @@ Widget signUpBody() {
               isPassword: true,
               textStyle: TextStyle(fontSize: 12, height: 0.4)),
           spacing(30.0, 30.0),
-          circleButton(
-            Colors.pink,
-            icon: Icons.arrow_forward_ios_sharp,
-            iconSize: 30.0,
-            padding: 15.0,
-          )
+          CustomButton(
+              color: Colors.pink,
+              iconData: Icons.arrow_forward_ios_sharp,
+              buttonType: 'circleButton',
+              iconSize: 30.0,
+              padding: 15.0)
         ],
       ),
     ),
