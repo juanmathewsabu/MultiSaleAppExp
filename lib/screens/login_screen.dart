@@ -43,8 +43,13 @@ Widget loginScreen() {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            buttonWithRightIcon(constants.signIn, Colors.pink,
-                icon: Icons.arrow_forward_ios_sharp, iconColor: Colors.white),
+            CustomButton(
+              text: constants.signIn,
+              color: Colors.pink,
+              iconData: Icons.arrow_forward_ios_sharp,
+              iconColor: Colors.white,
+              buttonType: 'buttonWithRightIcon',
+            ),
             GoogleSignInButton(onPressed: () {}),
             spacing(10.0, 10.0),
             FacebookSignInButton(

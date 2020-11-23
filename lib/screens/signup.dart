@@ -69,8 +69,10 @@ Widget signUpBody() {
               isPassword: true,
               textStyle: TextStyle(fontSize: 12, height: 0.4)),
           spacing(30.0, 30.0),
-          circleButton(Colors.pink,
-              icon: Icons.arrow_forward_ios_sharp,
+          CustomButton(
+              color: Colors.pink,
+              iconData: Icons.arrow_forward_ios_sharp,
+              buttonType: 'circleButton',
               iconSize: 30.0,
               padding: 15.0)
         ],
