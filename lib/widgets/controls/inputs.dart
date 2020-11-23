@@ -22,7 +22,7 @@ Widget textBox(hintText, labelText,
                     border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.all(8.0),
                     // hintText: hintText,
-                    prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+                    prefixIcon: prefixIcon != null ? prefixIcon : null,
                     suffixIcon: suffixIcon != null ? suffixIcon : null,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),

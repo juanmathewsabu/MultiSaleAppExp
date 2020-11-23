@@ -28,14 +28,16 @@ Widget loginScreen() {
         spacing(10.0, 10.0),
         //username
         textBox('abc@def.com', constants.emailOrMobile,
-            prefixIcon: Icons.account_circle,
+            prefixIcon: Icon(
+              Icons.account_circle,
+            ),
             textStyle: TextStyle(fontSize: 12, height: 0.4)),
         spacing(10.0, 10.0),
         //password
         textBox(constants.password, constants.password,
             isPassword: true,
-            prefixIcon: Icons.lock,
-            suffixIcon: Icons.visibility,
+            prefixIcon: Icon(Icons.lock),
+            suffixIcon: Icon(Icons.visibility),
             textStyle: TextStyle(fontSize: 12, height: 0.4)),
         spacing(10.0, 10.0),
         linkText(constants.forgotPassword),
