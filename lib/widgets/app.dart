@@ -8,12 +8,8 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => login(),
-        '/sign_up': (context) => signUp(),
-      },
-    );
+        debugShowCheckedModeBanner: false,
+        initialRoute: '/',
+        routes: customRoutes);
   }
 }
