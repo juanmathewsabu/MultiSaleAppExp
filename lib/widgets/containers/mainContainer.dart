@@ -81,7 +81,7 @@ class MainContainer extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Color(0XFFF0F1F1),
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(30),
                         topLeft: Radius.circular(30)),
