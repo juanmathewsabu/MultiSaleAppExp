@@ -1,10 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/widgets/containers/mainContainer.dart';
 import 'package:login_demo/widgets/controls/inputs.dart';
 import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/controls/texts.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
+
+Widget login() {
+  return Scaffold(
+    body: MainContainer(
+      backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+      bodyContent: loginScreen(),
+    ),
+  );
+}
 
 Widget loginScreen() {
   return Container(
@@ -33,8 +43,13 @@ Widget loginScreen() {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            buttonWithRightIcon(constants.signIn, Colors.pink,
-                icon: Icons.arrow_forward_ios_sharp, iconColor: Colors.white),
+            CustomButton(
+              text: constants.signIn,
+              color: Colors.pink,
+              iconData: Icons.arrow_forward_ios_sharp,
+              iconColor: Colors.white,
+              buttonType: 'buttonWithRightIcon',
+            ),
             GoogleSignInButton(onPressed: () {}),
             spacing(10.0, 10.0),
             FacebookSignInButton(
