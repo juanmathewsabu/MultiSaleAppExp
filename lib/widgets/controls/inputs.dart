@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:login_demo/screens/address_book.dart';
 
-Widget entryField(hintText, labelText,
-    {isPassword: false, prefixIcon, suffixIcon}) {
+Widget textBox(hintText, labelText,
+    {isPassword: false, prefixIcon, suffixIcon, textStyle}) {
   return Padding(
       padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
       child: Stack(
@@ -16,10 +16,13 @@ Widget entryField(hintText, labelText,
                 shadowColor: Colors.grey,
                 child: TextField(
                   autofocus: false,
-                  obscureText: isPassword,
-                  decoration: InputDecoration(
+      obscureText: isPassword,
+      decoration: InputDecoration(
+          // prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+          // suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+          border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.all(8.0),
-                    hintText: hintText,
+          // hintText: hintText,
                     prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
                     suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
                     enabledBorder: OutlineInputBorder(

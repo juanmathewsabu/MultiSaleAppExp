@@ -22,30 +22,30 @@ class AddressScreen extends StatelessWidget {
           mainHeading: 'Address Book',
           bodyContent: ListView(
             children: [
-              entryField(
+              textBox(
                 'Address',
                 'Address 1',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'City',
                 'City',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'State',
                 'Kerala',
                 suffixIcon: Icons.keyboard_arrow_down,
               ),
               spacing(10.0, 10.0),
               DropdownMenu(),
-              entryField(
+              textBox(
                 'Country',
                 'India',
                 suffixIcon: Icons.keyboard_arrow_down,
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'PIN Code',
                 '678976',
               ),
