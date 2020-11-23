@@ -16,33 +16,33 @@ class PersonalInformation extends StatelessWidget {
           mainHeading: 'Personal Information',
           bodyContent: ListView(
             children: [
-              entryField(
+              textBox(
                 'First Name',
                 'First Name',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Last Name',
                 'Last Name',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Gender',
                 'Male',
                 suffixIcon: Icons.keyboard_arrow_down,
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'email@mail.com',
                 'Email',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 '+91 0022335566',
                 'Phone Number',
               ),
               spacing(10.0, 10.0),
-              entryField(
+              textBox(
                 'Password',
                 'Password',
                 isPassword: true,
