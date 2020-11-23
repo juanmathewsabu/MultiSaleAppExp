@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-Widget entryField(hintText, labelText,
-    {isPassword: false, prefixIcon, suffixIcon, textStyle: TextStyle}) {
+Widget textBox(hintText, labelText,
+    {isPassword: false, prefixIcon, suffixIcon, textStyle}) {
   return TextField(
       obscureText: isPassword,
       decoration: InputDecoration(
-          prefixIcon: Icon(prefixIcon),
-          suffixIcon: Icon(suffixIcon),
+          // prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
+          // suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
           border: OutlineInputBorder(),
-          hintText: hintText,
+          // hintText: hintText,
           labelText: labelText),
-      style: textStyle);
+      style: textStyle != null ? textStyle : null);
 }

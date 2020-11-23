@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:login_demo/screens/login_screen.dart';
 import 'containers/mainContainer.dart';
+import 'package:login_demo/screens/signup.dart';
 
 class App extends StatelessWidget {
   @override
@@ -10,9 +11,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         body: MainContainer(
           backgroundImage: AssetImage("assets/images/blue_background.jpg"),
-          mainHeading: '',
-          subHeading: '',
-          bodyContent: LoginScreen(),
+          bodyContent: loginScreen(),
         ),
       ),
     );
