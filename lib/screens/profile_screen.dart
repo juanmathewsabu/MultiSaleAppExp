@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import '../widgets/containers/mainContainer.dart';
 import '../widgets/containers/clickableContainer.dart';
+import '../widgets/containers/boxes.dart';
 
 TextStyle kProfilePageHeadings =
     TextStyle(color: Color(0XFF7f7f7f), fontSize: 13);
@@ -41,7 +42,6 @@ class ProfileScreen extends StatelessWidget {
               style: kProfilePageHeadings,
             ),
           ),
-          //SizedBox(height: 5, width: double.infinity),
           for (int i = 0; i < list.length; i = i + 2)
             Row(
               children: [
@@ -137,20 +137,14 @@ class ProfileScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  height: 12,
-                ),
+                spacing(12.0, 0.0),
                 getRowContent('ACCOUNT SETTINGS', accountSettingList),
-                SizedBox(
-                  height: 15,
-                ),
+                spacing(15.0, 0.0),
                 getColumnContent(
                     heading: 'HOSTING',
                     subHeading1: 'Host your Store',
                     icon1: Icons.home_filled),
-                SizedBox(
-                  height: 15,
-                ),
+                spacing(15.0, 0.0),
                 getColumnContent(
                     heading: 'HELP & SUPPORT',
                     subHeading1: 'How Kriips Works',
@@ -158,17 +152,11 @@ class ProfileScreen extends StatelessWidget {
                     subHeading2: 'Feedback',
                     count: 2,
                     icon2: Icons.chat_bubble_outline),
-                SizedBox(
-                  height: 15,
-                ),
+                spacing(15.0, 0.0),
                 getRowContent('REFERRALS & CREDITS', referralList),
-                SizedBox(
-                  height: 15,
-                ),
+                spacing(15.0, 0.0),
                 getRowContent('QUICK ACCESS', quickAccessList1),
-                SizedBox(
-                  height: 15,
-                ),
+                spacing(15.0, 0.0),
                 getColumnContent(
                     heading: 'QUICK ACCESS',
                     subHeading1: 'Terms &\nConditions',
