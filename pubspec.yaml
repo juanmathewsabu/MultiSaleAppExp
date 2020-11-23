@@ -20,18 +20,21 @@ dev_dependencies:
     sdk: flutter
 
 
-
-
-
 flutter:
 
-  
-  
-  
   uses-material-design: true
-
   assets:
     - assets/images/
+  fonts:
+    - family: Satisfy
+      fonts:
+        - asset: fonts/Satisfy-Regular.ttf
+    - family: Alegreya Sans
+      fonts:
+        - asset: fonts/AlegreyaSans-Black.ttf
+
+
+
 
   
   
