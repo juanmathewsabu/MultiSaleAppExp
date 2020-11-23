@@ -1,3 +1,4 @@
+import 'package:login_demo/screens/personal_information.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -35,10 +36,7 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               side: BorderSide(color: Colors.grey)),
           color: color,
-          onPressed: () {
-            Navigator.pushNamed(context, '/sign_up');
-            // print('hai');
-          },
+          onPressed: () {},
           child: Row(
             children: <Widget>[
               Expanded(

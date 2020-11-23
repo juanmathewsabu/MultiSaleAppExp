@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/screens/address_book.dart';
 
 Widget textBox(hintText, labelText,
     {isPassword: false, prefixIcon, suffixIcon, textStyle}) {
@@ -22,8 +23,8 @@ Widget textBox(hintText, labelText,
                     border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.all(8.0),
                     // hintText: hintText,
-                    prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-                    suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
+                    prefixIcon: prefixIcon != null ? prefixIcon : null,
+                    suffixIcon: suffixIcon != null ? suffixIcon : null,
                     enabledBorder: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(5.0),
                       borderSide: BorderSide(color: Colors.white),
@@ -53,7 +54,7 @@ Widget textBox(hintText, labelText,
       ));
 }
 
-Widget raisedButton(text, color) {
+Widget raisedButton(text, color, context) {
   return RaisedButton(
     onPressed: () {},
     child: Text(text),
