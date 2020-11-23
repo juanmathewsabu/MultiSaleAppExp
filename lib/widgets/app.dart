@@ -11,7 +11,7 @@ class App extends StatelessWidget {
       home: Scaffold(
         body: MainContainer(
           backgroundImage: AssetImage("assets/images/blue_background.jpg"),
-          bodyContent: loginScreen(),
+          bodyContent: signUpBody(),
         ),
       ),
     );
