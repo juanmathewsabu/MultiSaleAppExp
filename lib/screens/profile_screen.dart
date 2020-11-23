@@ -68,16 +68,6 @@ class ProfileScreen extends StatelessWidget {
     );
   }
 
-  Expanded getExpanded(text, icon) {
-    return Expanded(
-      child: ClickableContainer(
-        onpress: () {},
-        text: text,
-        icon: icon,
-      ),
-    );
-  }
-
   Container getColumnContent(
       {String heading,
       String subHeading1,
