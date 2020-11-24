@@ -52,11 +52,13 @@ Widget signUpBody() {
                 hint: constants.gender),
             spacing(10.0, 10.0),
             TextBox(
+                keyboardTypeInput: TextInputType.emailAddress,
                 hintText: constants.email,
                 labelText: constants.email,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
             TextBox(
+                keyboardTypeInput: TextInputType.number,
                 hintText: constants.phone,
                 labelText: constants.phone,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),

@@ -49,6 +49,7 @@ class AddressScreen extends StatelessWidget {
               TextBox(
                 hintText: 'PIN Code',
                 labelText: '678976',
+                keyboardTypeInput: TextInputType.number,
               ),
               spacing(10.0, 10.0),
               checkbox(
@@ -61,6 +62,7 @@ class AddressScreen extends StatelessWidget {
                   buttonType: 'bottomButtonCurved',
                   text: constants.addToAddressBook,
                   color: Colors.blue,
+                  buttonHeight: 60.0,
                   onPressed: null),
               CardContainer(
                 icon: Icons.edit_outlined,
