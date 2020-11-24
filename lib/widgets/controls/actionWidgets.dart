@@ -1,5 +1,7 @@
+import 'package:login_demo/screens/address_book.dart';
 import 'package:login_demo/screens/personal_information.dart';
 import 'package:flutter/material.dart';
+import 'package:login_demo/models/controlConstants.dart' as controlConstants;
 
 class CustomButton extends StatelessWidget {
   CustomButton(
@@ -29,9 +31,9 @@ class CustomButton extends StatelessWidget {
   final IconData iconData;
   @override
   Widget build(BuildContext context) {
-    if (this.buttonType == 'buttonWithRightIcon') {
+    if (this.buttonType == controlConstants.buttonWithRightIcon) {
       return Container(
-        height: 40,
+        height: 50,
         margin: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),
@@ -75,12 +77,40 @@ class CustomButton extends StatelessWidget {
         ),
       );
     }
-    if (this.buttonType == 'circleButton') {
+    if (this.buttonType == controlConstants.circleButton) {
       return circleButton(context, this.color,
           iconName: this.iconData,
           iconSize: this.iconSize,
           padding: this.padding,
           route: this.route);
+    }
+    if (this.buttonType == 'bottomButtonCurved') {
+      return GestureDetector(
+        onTap: onPressed,
+        child: Container(
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: kTextStyleLarge,
+            ),
+          ),
+          margin: EdgeInsets.all(10.0),
+          width: double.infinity,
+          height: kBottomContainerHght,
+          //color: kBottomColor,
+        ),
+      );
+    }
+    if (this.buttonType == 'raisedButton') {
+      return RaisedButton(
+        onPressed: () {},
+        child: Text(text),
+        color: color,
+      );
     }
     return null;
   }

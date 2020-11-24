@@ -4,6 +4,7 @@ import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/controls/texts.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
+import 'package:login_demo/models/controlConstants.dart' as controlConstants;
 import 'package:login_demo/widgets/controls/dropdownlist.dart';
 import 'package:flutter/material.dart';
 import '../widgets/containers/mainContainer.dart';
@@ -32,39 +33,56 @@ Widget signUpBody() {
             spacing(25.0, 25.0),
             Texts(
                 text: constants.signUp,
-                textType: 'labelText',
+                textType: controlConstants.labelText,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
             spacing(10.0, 10.0),
             //username
-            textBox(constants.firstName, constants.firstName,
+            TextBox(
+                hintText: constants.firstName,
+                labelText: constants.firstName,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.lastName, constants.lastName,
+            TextBox(
+                hintText: constants.lastName,
+                labelText: constants.lastName,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            DropDownListCommon(values: constants.genderList),
+            DropDownListCommon(
+                values: constants.genderList,
+                name: constants.gender,
+                hint: constants.gender),
             spacing(10.0, 10.0),
-            textBox(constants.email, constants.email,
+            TextBox(
+                hintText: constants.email,
+                labelText: constants.email,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.phone, constants.phone,
+            TextBox(
+                hintText: constants.phone,
+                labelText: constants.phone,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.referralCode, constants.referralCode,
+            TextBox(
+                hintText: constants.referralCode,
+                labelText: constants.referralCode,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.password, constants.password,
+            TextBox(
+                hintText: constants.password,
+                labelText: constants.password,
                 isPassword: true,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.confirmPassword, constants.confirmPassword,
+            TextBox(
+                hintText: constants.confirmPassword,
+                labelText: constants.confirmPassword,
                 isPassword: true,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(30.0, 30.0),
             CustomButton(
                 color: Colors.pink,
                 iconData: Icons.arrow_forward_ios_sharp,
-                buttonType: 'circleButton',
+                buttonType: controlConstants.circleButton,
                 route: '/',
                 iconSize: 30.0,
                 padding: 15.0)
