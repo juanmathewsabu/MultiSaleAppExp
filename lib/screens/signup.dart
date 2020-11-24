@@ -6,7 +6,6 @@ import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
 import 'package:login_demo/models/controlConstants.dart' as controlConstants;
 import 'package:login_demo/widgets/controls/dropdownlist.dart';
-import 'package:flutter/material.dart';
 import '../widgets/containers/mainContainer.dart';
 
 class SignUp extends StatelessWidget {
@@ -80,12 +79,14 @@ Widget signUpBody() {
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(30.0, 30.0),
             CustomButton(
-                color: Colors.pink,
-                iconData: Icons.arrow_forward_ios_sharp,
-                buttonType: controlConstants.circleButton,
-                route: '/',
-                iconSize: 30.0,
-                padding: 15.0)
+              color: Colors.pink,
+              iconData: Icons.arrow_forward_ios_sharp,
+              buttonType: controlConstants.circleButton,
+              route: '/',
+              iconSize: 30.0,
+              padding: 15.0,
+              onPressed: null,
+            )
           ],
         ),
       ),

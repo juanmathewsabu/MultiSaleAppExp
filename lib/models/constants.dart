@@ -41,3 +41,5 @@ final List<String> countryList = [
   'Pakistan',
   'Brazil',
 ];
+
+final double textBoxShadowElevation = 3.0;

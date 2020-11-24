@@ -67,6 +67,7 @@ Widget loginScreen() {
               iconColor: Colors.white,
               route: routeConstants.profile,
               buttonType: controlConstants.buttonWithRightIcon,
+              onPressed: null,
             ),
             Center(
                 child: Texts(text: 'or', textType: controlConstants.labelText)),
