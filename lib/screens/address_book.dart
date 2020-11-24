@@ -6,7 +6,6 @@ import 'package:login_demo/widgets/controls/address_card.dart';
 import 'package:login_demo/widgets/controls/dropdownlist.dart';
 import 'package:login_demo/widgets/controls/inputs.dart';
 import '../widgets/containers/mainContainer.dart';
-import 'package:login_demo/dropdown_list.dart';
 import 'package:login_demo/models/constants.dart' as constants;
 
 const kBottomContainerHght = 60.0;
