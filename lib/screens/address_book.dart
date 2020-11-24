@@ -7,7 +7,7 @@ import 'package:login_demo/widgets/controls/inputs.dart';
 import '../widgets/containers/mainContainer.dart';
 import 'package:login_demo/dropdown_list.dart';
 
-const kBottomContainerHght = 60.0;
+const kBottomContainerHght = 50.0;
 const kBottomColor = Colors.blue;
 const kTextStyleLarge = TextStyle(fontSize: 15.0, color: Colors.white70);
 
