@@ -31,7 +31,7 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     if (this.buttonType == 'buttonWithRightIcon') {
       return Container(
-        height: 40,
+        height: 50,
         margin: EdgeInsets.symmetric(vertical: 20),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(10)),

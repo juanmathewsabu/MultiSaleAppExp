@@ -4,6 +4,7 @@ import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/controls/texts.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
+import 'package:login_demo/models/controlConstants.dart' as controlConstants;
 import 'package:login_demo/widgets/controls/dropdownlist.dart';
 import 'package:flutter/material.dart';
 import '../widgets/containers/mainContainer.dart';
@@ -32,7 +33,7 @@ Widget signUpBody() {
             spacing(25.0, 25.0),
             Texts(
                 text: constants.signUp,
-                textType: 'labelText',
+                textType: controlConstants.labelText,
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
             spacing(10.0, 10.0),
             //username
@@ -67,7 +68,7 @@ Widget signUpBody() {
             CustomButton(
                 color: Colors.pink,
                 iconData: Icons.arrow_forward_ios_sharp,
-                buttonType: 'circleButton',
+                buttonType: controlConstants.circleButton,
                 route: '/',
                 iconSize: 30.0,
                 padding: 15.0)

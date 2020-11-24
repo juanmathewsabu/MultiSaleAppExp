@@ -5,6 +5,8 @@ import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/controls/texts.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/models/constants.dart' as constants;
+import 'package:login_demo/models/controlConstants.dart' as controlConstants;
+import 'package:login_demo/models/routeConstants.dart' as routeConstants;
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
 
 class LogIn extends StatelessWidget {
@@ -28,8 +30,8 @@ Widget loginScreen() {
       children: [
         spacing(25.0, 25.0),
         Texts(
-            textType: 'labelText',
-            text: 'Log In',
+            textType: controlConstants.labelText,
+            text: constants.login,
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
         spacing(10.0, 10.0),
         //username
@@ -45,8 +47,10 @@ Widget loginScreen() {
             prefixIcon: Icon(Icons.lock),
             suffixIcon: Icon(Icons.visibility),
             textStyle: TextStyle(fontSize: 12, height: 0.4)),
-        spacing(10.0, 10.0),
-        Texts(text: constants.forgotPassword, textType: 'linkText'),
+        spacing(25.0, 10.0),
+        Texts(
+            text: constants.forgotPassword,
+            textType: controlConstants.linkText),
         spacing(10.0, 10.0),
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -57,23 +61,27 @@ Widget loginScreen() {
               color: Colors.pink,
               iconData: Icons.arrow_forward_ios_sharp,
               iconColor: Colors.white,
-              route: '/profile',
-              buttonType: 'buttonWithRightIcon',
+              route: routeConstants.profile,
+              buttonType: controlConstants.buttonWithRightIcon,
             ),
-            GoogleSignInButton(onPressed: () {}),
+            Center(
+                child: Texts(text: 'or', textType: controlConstants.labelText)),
+            spacing(10.0, 10.0),
+            GoogleSignInButton(borderRadius: 10.0, onPressed: () {}),
             spacing(10.0, 10.0),
             FacebookSignInButton(
+              borderRadius: 10.0,
               onPressed: () {},
             ),
           ],
         ),
-        spacing(10.0, 10.0),
+        spacing(30.0, 10.0),
         Center(
             child: Texts(
                 text1: constants.newToKriips,
                 text2: constants.signUp,
-                route: '/sign_up',
-                textType: 'richText',
+                route: routeConstants.signUp,
+                textType: controlConstants.richText,
                 linkColor: Colors.pink))
       ],
     ),
