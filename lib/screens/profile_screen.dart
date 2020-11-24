@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
@@ -97,6 +95,7 @@ class ProfileScreen extends StatelessWidget {
                         list[i].text == 'Personal\nInformation'
                             ? Navigator.pushNamed(
                                 context, '/personal_information')
+                            // ignore: unnecessary_statements
                             : null;
                       },
                       text: list[i].text,
@@ -109,6 +108,7 @@ class ProfileScreen extends StatelessWidget {
                         onpress: () {
                           list[i + 1].text == 'Address Book'
                               ? Navigator.pushNamed(context, '/address_book')
+                              // ignore: unnecessary_statements
                               : null;
                         },
                         text: list[i + 1].text,
