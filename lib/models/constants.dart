@@ -18,7 +18,9 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     confirmPassword = 'Confirm Password',
     addToAddressBook = 'Add to Address Book',
     state = 'State',
-    country = 'Country';
+    country = 'Country',
+    update = 'Update',
+    ok = 'OK';
 
 final List<String> genderList = ['Male', 'Female'];
 final List<String> stateList = [
@@ -39,3 +41,5 @@ final List<String> countryList = [
   'Pakistan',
   'Brazil',
 ];
+
+final double textBoxShadowElevation = 3.0;

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/models/constants.dart' as constants;
 
 class TextBox extends StatefulWidget {
   TextBox(
@@ -30,7 +31,7 @@ class _TextBoxState extends State<TextBox> {
                 padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
                 child: Material(
                   borderRadius: BorderRadius.circular(5.0),
-                  elevation: 5.0,
+                  elevation: constants.textBoxShadowElevation,
                   shadowColor: Colors.grey,
                   child: TextField(
                     autofocus: false,

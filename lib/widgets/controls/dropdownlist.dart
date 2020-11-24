@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_demo/models/constants.dart' as constants;
 
 //General drop down list
 class DropDownListCommon extends StatefulWidget {
@@ -24,7 +25,7 @@ class _DDLState extends State<DropDownListCommon> {
                 padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
                 child: Material(
                   borderRadius: BorderRadius.circular(5.0),
-                  elevation: 5.0,
+                  elevation: constants.textBoxShadowElevation,
                   shadowColor: Colors.grey,
                   child: Container(
                     padding: EdgeInsets.only(left: 8.0),
