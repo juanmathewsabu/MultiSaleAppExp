@@ -61,9 +61,8 @@ class AddressScreen extends StatelessWidget {
                   buttonType: 'bottomButtonCurved',
                   text: constants.addToAddressBook,
                   color: Colors.blue,
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/host_your_store');
-                  }),
+                  buttonHeight: 60.0,
+                  onPressed: null),
               CardContainer(
                 icon: Icons.edit_outlined,
                 text: 'Current Address Here',

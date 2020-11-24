@@ -52,6 +52,12 @@ class ProfileScreen extends StatelessWidget {
               Navigator.pushNamed(context, '/termsAndConditions');
             };
           }
+        case 'Host your Store':
+          {
+            return () {
+              Navigator.pushNamed(context, '/host_your_store');
+            };
+          }
         default:
           return () {};
       }
