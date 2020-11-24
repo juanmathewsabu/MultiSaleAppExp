@@ -1,3 +1,4 @@
+import 'package:login_demo/screens/address_book.dart';
 import 'package:login_demo/screens/personal_information.dart';
 import 'package:flutter/material.dart';
 
@@ -81,6 +82,27 @@ class CustomButton extends StatelessWidget {
           iconSize: this.iconSize,
           padding: this.padding,
           route: this.route);
+    }
+    if (this.buttonType == 'bottomButtonCurved') {
+      return GestureDetector(
+        onTap: onPressed,
+        child: Container(
+          decoration: BoxDecoration(
+            color: color,
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Center(
+            child: Text(
+              text,
+              style: kTextStyleLarge,
+            ),
+          ),
+          margin: EdgeInsets.all(10.0),
+          width: double.infinity,
+          height: kBottomContainerHght,
+          //color: kBottomColor,
+        ),
+      );
     }
     return null;
   }

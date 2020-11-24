@@ -20,7 +20,7 @@ Widget textBox(hintText, labelText,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.all(8.0),
-                    // hintText: hintText,
+                    hintText: hintText,
                     prefixIcon: prefixIcon != null ? prefixIcon : null,
                     suffixIcon: suffixIcon != null ? suffixIcon : null,
                     enabledBorder: OutlineInputBorder(
