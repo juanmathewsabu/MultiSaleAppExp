@@ -106,7 +106,7 @@ class CustomButton extends StatelessWidget {
           ),
           margin: EdgeInsets.all(margin != null ? margin : 10.0),
           width: double.infinity,
-          height: buttonHeight != null ? buttonHeight : 50.0,
+          height: buttonHeight != null ? buttonHeight : 60.0,
           //color: kBottomColor,
         ),
       );
