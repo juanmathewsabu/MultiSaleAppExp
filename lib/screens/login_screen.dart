@@ -16,7 +16,7 @@ class LogIn extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: MainContainer(
         backgroundImage: AssetImage("assets/images/blue_background.jpg"),
-        bodyContent: loginScreen(),
+        bodyContent: SingleChildScrollView(child: loginScreen()),
       ),
     );
   }
@@ -36,6 +36,7 @@ Widget loginScreen() {
         spacing(10.0, 10.0),
         //username
         TextBox(
+            keyboardTypeInput: TextInputType.emailAddress,
             hintText: 'abc@def.com',
             labelText: constants.emailOrMobile,
             prefixIcon: Icon(
