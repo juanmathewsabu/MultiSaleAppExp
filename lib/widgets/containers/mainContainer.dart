@@ -6,6 +6,7 @@ class MainContainer extends StatelessWidget {
   final String mainHeading;
   final String subHeading;
   final Widget bodyContent;
+  final Function onPressed;
 
   MainContainer({
     @required this.backgroundImage,
@@ -13,6 +14,7 @@ class MainContainer extends StatelessWidget {
     @required this.mainHeading,
     this.subHeading,
     @required this.bodyContent,
+    this.onPressed,
   });
 
   @override
@@ -40,10 +42,13 @@ class MainContainer extends StatelessWidget {
                         : CrossAxisAlignment.end,
                     children: <Widget>[
                       profilePicture == null
-                          ? Icon(
-                              Icons.arrow_back_ios_sharp,
-                              color: Colors.white,
-                              size: 20.0,
+                          ? GestureDetector(
+                              onTap: onPressed,
+                              child: Icon(
+                                Icons.arrow_back_ios_sharp,
+                                color: Colors.white,
+                                size: 20.0,
+                              ),
                             )
                           : CircleAvatar(
                               backgroundImage: profilePicture,
