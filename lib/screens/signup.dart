@@ -42,7 +42,10 @@ Widget signUpBody() {
             textBox(constants.lastName, constants.lastName,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            DropDownListCommon(values: constants.genderList),
+            DropDownListCommon(
+                values: constants.genderList,
+                name: constants.gender,
+                hint: constants.gender),
             spacing(10.0, 10.0),
             textBox(constants.email, constants.email,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
