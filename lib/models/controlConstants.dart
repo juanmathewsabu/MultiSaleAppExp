@@ -4,4 +4,6 @@ final String richText = 'richText',
     labelText = 'labelText',
     linkText = 'linkText',
     buttonWithRightIcon = 'buttonWithRightIcon',
-    circleButton = 'circleButton';
+    circleButton = 'circleButton',
+    bottomButtonCurved = 'bottomButtonCurved',
+    raisedButton = 'raisedButton';

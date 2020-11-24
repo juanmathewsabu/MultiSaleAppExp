@@ -37,10 +37,14 @@ Widget signUpBody() {
                 style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
             spacing(10.0, 10.0),
             //username
-            textBox(constants.firstName, constants.firstName,
+            TextBox(
+                hintText: constants.firstName,
+                labelText: constants.firstName,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.lastName, constants.lastName,
+            TextBox(
+                hintText: constants.lastName,
+                labelText: constants.lastName,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
             DropDownListCommon(
@@ -48,20 +52,30 @@ Widget signUpBody() {
                 name: constants.gender,
                 hint: constants.gender),
             spacing(10.0, 10.0),
-            textBox(constants.email, constants.email,
+            TextBox(
+                hintText: constants.email,
+                labelText: constants.email,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.phone, constants.phone,
+            TextBox(
+                hintText: constants.phone,
+                labelText: constants.phone,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.referralCode, constants.referralCode,
+            TextBox(
+                hintText: constants.referralCode,
+                labelText: constants.referralCode,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.password, constants.password,
+            TextBox(
+                hintText: constants.password,
+                labelText: constants.password,
                 isPassword: true,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(10.0, 10.0),
-            textBox(constants.confirmPassword, constants.confirmPassword,
+            TextBox(
+                hintText: constants.confirmPassword,
+                labelText: constants.confirmPassword,
                 isPassword: true,
                 textStyle: TextStyle(fontSize: 12, height: 0.4)),
             spacing(30.0, 30.0),

@@ -35,14 +35,18 @@ Widget loginScreen() {
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
         spacing(10.0, 10.0),
         //username
-        textBox('abc@def.com', constants.emailOrMobile,
+        TextBox(
+            hintText: 'abc@def.com',
+            labelText: constants.emailOrMobile,
             prefixIcon: Icon(
               Icons.account_circle,
             ),
             textStyle: TextStyle(fontSize: 12, height: 0.4)),
         spacing(10.0, 10.0),
         //password
-        textBox(constants.password, constants.password,
+        TextBox(
+            hintText: constants.password,
+            labelText: constants.password,
             isPassword: true,
             prefixIcon: Icon(Icons.lock),
             suffixIcon: Icon(Icons.visibility),
