@@ -7,6 +7,7 @@ class MainContainer extends StatelessWidget {
   final String subHeading;
   final Widget bodyContent;
   final Function onPressed;
+  final Color backgroundColor;
 
   MainContainer({
     @required this.backgroundImage,
@@ -15,6 +16,7 @@ class MainContainer extends StatelessWidget {
     this.subHeading,
     @required this.bodyContent,
     this.onPressed,
+    this.backgroundColor,
   });
 
   @override
@@ -86,7 +88,7 @@ class MainContainer extends StatelessWidget {
                   padding:
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   decoration: BoxDecoration(
-                    color: Color(0XFFF0F1F1),
+                    color: backgroundColor,
                     borderRadius: BorderRadius.only(
                         topRight: Radius.circular(30),
                         topLeft: Radius.circular(30)),
