@@ -94,7 +94,10 @@ class ProfileScreen extends StatelessWidget {
                   Expanded(
                     child: ClickableContainer(
                       onpress: () {
-                        Navigator.pushNamed(context, '/address_book');
+                        list[i].text == 'Personal\nInformation'
+                            ? Navigator.pushNamed(
+                                context, '/personal_information')
+                            : null;
                       },
                       text: list[i].text,
                       icon: list[i].icon,
@@ -103,7 +106,11 @@ class ProfileScreen extends StatelessWidget {
                   if (list[i + 1] != null)
                     Expanded(
                       child: ClickableContainer(
-                        onpress: () {},
+                        onpress: () {
+                          list[i + 1].text == 'Address Book'
+                              ? Navigator.pushNamed(context, '/address_book')
+                              : null;
+                        },
                         text: list[i + 1].text,
                         icon: list[i + 1].icon,
                       ),
