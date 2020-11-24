@@ -6,8 +6,8 @@ import 'package:login_demo/screens/profile_screen.dart';
 import '../screens/address_book.dart';
 
 var customRoutes = <String, WidgetBuilder>{
-  '/': (context) => login(),
-  '/sign_up': (context) => signUpBody(),
+  '/': (context) => LogIn(),
+  '/sign_up': (context) => SignUp(),
   '/profile': (context) => ProfileScreen(),
   '/address_book': (context) => AddressScreen(),
   '/personal_information': (context) => PersonalInformation(),
