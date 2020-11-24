@@ -15,7 +15,9 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     phone = 'Phone Number',
     referralCode = 'Referral Code',
     confirmPassword = 'Confirm Password',
-    addToAddressBook = 'Add to Address Book';
+    addToAddressBook = 'Add to Address Book',
+    state = 'State',
+    country = 'Country';
 
 final List<String> genderList = ['Male', 'Female'];
 final List<String> stateList = [

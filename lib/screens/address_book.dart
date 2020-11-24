@@ -34,19 +34,15 @@ class AddressScreen extends StatelessWidget {
                 'City',
               ),
               spacing(10.0, 10.0),
-              // textBox(
-              //   'State',
-              //   'Kerala',
-              //   suffixIcon: Icon(Icons.keyboard_arrow_down),
-              //   ),
-              DropDownListCommon(values: constants.stateList),
+              DropDownListCommon(
+                  values: constants.stateList,
+                  name: constants.state,
+                  hint: constants.state),
               spacing(10.0, 10.0),
-              DropDownListCommon(values: constants.countryList),
-              // textBox(
-              //   'Country',
-              //   'India',
-              //   suffixIcon: Icon(Icons.keyboard_arrow_down),
-              // ),
+              DropDownListCommon(
+                  values: constants.countryList,
+                  name: constants.country,
+                  hint: constants.country),
               spacing(10.0, 10.0),
               textBox(
                 'PIN Code',
@@ -84,49 +80,3 @@ class AddressScreen extends StatelessWidget {
     );
   }
 }
-
-// List<DropdownMenuItem> getDropdownItems() {
-//   List<DropdownMenuItem<String>> dropdownItems = [];
-//   for (String item in stateList) {
-//     var newItem = DropdownMenuItem(
-//       child: Text(item),
-//       value: item,
-//     );
-//     dropdownItems.add((newItem));
-//   }
-//   return dropdownItems;
-// }
-//
-// class DropdownMenu extends StatefulWidget {
-//   @override
-//   _DropdownMenuState createState() => _DropdownMenuState();
-// }
-//
-// class _DropdownMenuState extends State<DropdownMenu> {
-//   String selectedItem;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: const EdgeInsets.all(2),
-//       child: Container(
-//         decoration: BoxDecoration(
-//             border: Border.all(color: Colors.grey, width: 0.5),
-//             borderRadius: BorderRadius.circular(5)),
-//         //padding: EdgeInsets.fromLTRB(30, 20, 1, 5),
-//         height: 60.0,
-//         child: DropdownButton<String>(
-//           isExpanded: true,
-//           style: TextStyle(fontSize: 20, color: Colors.black),
-//           value: selectedItem,
-//           items: getDropdownItems(),
-//           onChanged: (value) {
-//             setState(() {
-//               selectedItem = value;
-//             });
-//           },
-//           //style: Theme.of(context).textTheme.title,
-//         ),
-//       ),
-//     );
-//   }
-// }
