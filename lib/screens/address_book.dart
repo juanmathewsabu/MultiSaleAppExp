@@ -26,14 +26,14 @@ class AddressScreen extends StatelessWidget {
           },
           bodyContent: ListView(
             children: [
-              textBox(
-                'Address',
-                'Address 1',
+              TextBox(
+                hintText: 'Address',
+                labelText: 'Address 1',
               ),
               spacing(10.0, 10.0),
-              textBox(
-                'City',
-                'City',
+              TextBox(
+                hintText: 'City',
+                labelText: 'City',
               ),
               spacing(10.0, 10.0),
               DropDownListCommon(
@@ -46,9 +46,9 @@ class AddressScreen extends StatelessWidget {
                   name: constants.country,
                   hint: constants.country),
               spacing(10.0, 10.0),
-              textBox(
-                'PIN Code',
-                '678976',
+              TextBox(
+                hintText: 'PIN Code',
+                labelText: '678976',
               ),
               spacing(10.0, 10.0),
               checkbox(

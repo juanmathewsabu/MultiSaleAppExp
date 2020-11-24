@@ -13,39 +13,39 @@ class PersonalInformation extends StatelessWidget {
       mainHeading: 'Personal Information',
       bodyContent: ListView(
         children: [
-          textBox(
-            'First Name',
-            'First Name',
+          TextBox(
+            hintText: 'First Name',
+            labelText: 'First Name',
           ),
           spacing(10.0, 10.0),
-          textBox(
-            'Last Name',
-            'Last Name',
+          TextBox(
+            hintText: 'Last Name',
+            labelText: 'Last Name',
           ),
           spacing(10.0, 10.0),
-          textBox(
-            'Gender',
-            'Male',
+          TextBox(
+            hintText: 'Gender',
+            labelText: 'Male',
             suffixIcon: Icon(
               Icons.keyboard_arrow_down,
             ),
           ),
           spacing(10.0, 10.0),
-          textBox(
-            'email@mail.com',
-            'Email',
+          TextBox(
+            hintText: 'email@mail.com',
+            labelText: 'Email',
           ),
           spacing(10.0, 10.0),
-          textBox(
-            '+91 0022335566',
-            'Phone Number',
+          TextBox(
+            hintText: '+91 0022335566',
+            labelText: 'Phone Number',
           ),
           spacing(10.0, 10.0),
-          textBox(
-            'Password',
-            'Password',
+          TextBox(
+            hintText: 'Password',
+            labelText: 'Password',
             isPassword: true,
-            suffixIcon: IconButton(
+            suffixIconButton: IconButton(
               icon: Icon(Icons.edit_outlined),
               onPressed: () {
                 showDialog<Widget>(
@@ -56,21 +56,21 @@ class PersonalInformation extends StatelessWidget {
                       content: SingleChildScrollView(
                         child: ListBody(
                           children: <Widget>[
-                            textBox(
-                              'Password',
-                              'Password',
+                            TextBox(
+                              hintText: 'Password',
+                              labelText: 'Password',
                               isPassword: true,
                             ),
                             spacing(10.0, 10.0),
-                            textBox(
-                              'Password',
-                              'Password',
+                            TextBox(
+                              hintText: 'Password',
+                              labelText: 'Password',
                               isPassword: true,
                             ),
                             spacing(10.0, 10.0),
-                            textBox(
-                              'Password',
-                              'Password',
+                            TextBox(
+                              hintText: 'Password',
+                              labelText: 'Password',
                               isPassword: true,
                             ),
                           ],

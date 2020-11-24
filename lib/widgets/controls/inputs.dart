@@ -1,62 +1,77 @@
 import 'package:flutter/material.dart';
 
-Widget textBox(hintText, labelText,
-    {isPassword: false, prefixIcon, suffixIcon, textStyle}) {
-  return Padding(
-      padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
-      child: Stack(
-        //try to allow drawing label Text over the container
-        children: <Widget>[
-          Padding(
-              padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
-              child: Material(
-                borderRadius: BorderRadius.circular(5.0),
-                elevation: 5.0,
-                shadowColor: Colors.grey,
-                child: TextField(
-                  autofocus: false,
-                  obscureText: isPassword,
-                  decoration: InputDecoration(
-                    border: OutlineInputBorder(),
-                    contentPadding: EdgeInsets.all(8.0),
-                    hintText: hintText,
-                    prefixIcon: prefixIcon != null ? prefixIcon : null,
-                    suffixIcon: suffixIcon != null ? suffixIcon : null,
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      borderSide: BorderSide(color: Colors.white),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(5.0),
-                      borderSide: BorderSide(color: Colors.blue),
-                    ),
-                  ),
-                ),
-              )),
-          Container(
-            //position label
-            margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
-            padding: EdgeInsets.fromLTRB(3, 0, 3,
-                0), // input outline default seems using 4.0 as padding from their source
-            child: Text(
-              labelText,
-              style: TextStyle(
-                fontSize: 10,
-                color: Colors.blue,
-              ),
-            ),
-            color: Colors.white, //just to cover the intercepted border
-          )
-        ],
-      ));
+class TextBox extends StatefulWidget {
+  TextBox(
+      {this.hintText,
+      this.labelText,
+      this.isPassword: false,
+      this.prefixIcon,
+      this.suffixIcon,
+      this.suffixIconButton,
+      this.textStyle});
+  final String hintText, labelText;
+  final bool isPassword;
+  final Icon prefixIcon, suffixIcon;
+  final IconButton suffixIconButton;
+  final TextStyle textStyle;
+  @override
+  _TextBoxState createState() => _TextBoxState();
 }
 
-Widget raisedButton(text, color, context) {
-  return RaisedButton(
-    onPressed: () {},
-    child: Text(text),
-    color: color,
-  );
+class _TextBoxState extends State<TextBox> {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+        padding: EdgeInsets.fromLTRB(2, 2, 2, 2),
+        child: Stack(
+          //try to allow drawing label Text over the container
+          children: <Widget>[
+            Padding(
+                padding: EdgeInsets.fromLTRB(0, 5, 0, 0),
+                child: Material(
+                  borderRadius: BorderRadius.circular(5.0),
+                  elevation: 5.0,
+                  shadowColor: Colors.grey,
+                  child: TextField(
+                    autofocus: false,
+                    obscureText: widget.isPassword,
+                    decoration: InputDecoration(
+                      border: OutlineInputBorder(),
+                      contentPadding: EdgeInsets.all(8.0),
+                      hintText: widget.hintText,
+                      prefixIcon:
+                          widget.prefixIcon != null ? widget.prefixIcon : null,
+                      suffixIcon: widget.suffixIcon != null
+                          ? widget.suffixIcon
+                          : widget.suffixIconButton,
+                      enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: BorderSide(color: Colors.white),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(5.0),
+                        borderSide: BorderSide(color: Colors.blue),
+                      ),
+                    ),
+                  ),
+                )),
+            Container(
+              //position label
+              margin: EdgeInsets.fromLTRB(10, 0, 0, 0),
+              padding: EdgeInsets.fromLTRB(3, 0, 3,
+                  0), // input outline default seems using 4.0 as padding from their source
+              child: Text(
+                widget.labelText,
+                style: TextStyle(
+                  fontSize: 10,
+                  color: Colors.blue,
+                ),
+              ),
+              color: Colors.white, //just to cover the intercepted border
+            )
+          ],
+        ));
+  }
 }
 
 Widget checkbox({text, textColor, checkColor, checkActiveColor}) {
