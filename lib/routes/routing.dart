@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:login_demo/screens/terms&conditions.dart';
+import 'package:login_demo/screens/hosting_store.dart';
 import '../screens/login_screen.dart';
 import '../screens/signup.dart';
 import 'package:login_demo/screens/personal_information.dart';
@@ -12,5 +13,6 @@ var customRoutes = <String, WidgetBuilder>{
   '/profile': (context) => ProfileScreen(),
   '/address_book': (context) => AddressScreen(),
   '/personal_information': (context) => PersonalInformation(),
-  '/termsAndConditions': (context) => TermsAndConditions()
+  '/termsAndConditions': (context) => TermsAndConditions(),
+  '/host_your_store': (context) => HostingScreen(),
 };

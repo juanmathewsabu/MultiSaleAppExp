@@ -14,6 +14,9 @@ class CustomButton extends StatelessWidget {
       this.iconSize,
       this.padding,
       this.textColor,
+      this.buttonHeight,
+      this.margin,
+      this.borderRadius,
       @required this.buttonType,
       @required this.onPressed});
   final GestureTapCallback onPressed;
@@ -26,6 +29,9 @@ class CustomButton extends StatelessWidget {
   final dynamic iconSize;
   final dynamic padding;
   final Color iconColor;
+  final dynamic buttonHeight;
+  final dynamic margin;
+  final dynamic borderRadius;
   final String buttonType;
   final IconData iconData;
   @override
@@ -83,13 +89,14 @@ class CustomButton extends StatelessWidget {
           padding: this.padding,
           route: this.route);
     }
-    if (this.buttonType == 'bottomButtonCurved') {
+    if (this.buttonType == controlConstants.bottomButtonCurved) {
       return GestureDetector(
         onTap: onPressed,
         child: Container(
           decoration: BoxDecoration(
             color: color,
-            borderRadius: BorderRadius.circular(15),
+            borderRadius: BorderRadius.circular(
+                borderRadius != null ? borderRadius : 10.0),
           ),
           child: Center(
             child: Text(
@@ -97,9 +104,9 @@ class CustomButton extends StatelessWidget {
               style: kTextStyleLarge,
             ),
           ),
-          margin: EdgeInsets.all(10.0),
+          margin: EdgeInsets.all(margin != null ? margin : 10.0),
           width: double.infinity,
-          height: kBottomContainerHght,
+          height: buttonHeight != null ? buttonHeight : 50.0,
           //color: kBottomColor,
         ),
       );
