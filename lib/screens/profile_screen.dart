@@ -30,6 +30,33 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    Function getRoutes(String text) {
+      int i = 0;
+      switch (text) {
+        case 'Personal\nInformation':
+          {
+            return () {
+              print(i + 1);
+              Navigator.pushNamed(context, '/personal_information');
+            };
+          }
+        case 'Address Book':
+          {
+            return () {
+              Navigator.pushNamed(context, '/address_book');
+            };
+          }
+        case 'Terms &\nConditions':
+          {
+            return () {
+              Navigator.pushNamed(context, '/termsAndConditions');
+            };
+          }
+        default:
+          return () {};
+      }
+    }
+
     Container getColumnContent(
         {String heading,
         String subHeading1,
@@ -53,7 +80,7 @@ class ProfileScreen extends StatelessWidget {
             Container(
               width: 155,
               child: ClickableContainer(
-                onpress: () {},
+                onpress: getRoutes(subHeading1),
                 text: subHeading1,
                 icon: icon1,
                 iconColor: null,
@@ -63,7 +90,7 @@ class ProfileScreen extends StatelessWidget {
               Container(
                 width: 155,
                 child: ClickableContainer(
-                  onpress: () {},
+                  onpress: getRoutes(subHeading2),
                   text: subHeading2,
                   icon: icon2,
                   iconColor: color,
@@ -91,12 +118,7 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ClickableContainer(
-                      onpress: () {
-                        list[i].text == 'Personal\nInformation'
-                            ? Navigator.pushNamed(
-                                context, '/personal_information')
-                            : null;
-                      },
+                      onpress: getRoutes(list[i].text),
                       text: list[i].text,
                       icon: list[i].icon,
                     ),
@@ -104,11 +126,7 @@ class ProfileScreen extends StatelessWidget {
                   if (list[i + 1] != null)
                     Expanded(
                       child: ClickableContainer(
-                        onpress: () {
-                          list[i + 1].text == 'Address Book'
-                              ? Navigator.pushNamed(context, '/address_book')
-                              : null;
-                        },
+                        onpress: getRoutes(list[i + 1].text),
                         text: list[i + 1].text,
                         icon: list[i + 1].icon,
                       ),
