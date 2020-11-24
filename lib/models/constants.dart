@@ -18,3 +18,21 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     addToAddressBook = 'Add to Address Book';
 
 final List<String> genderList = ['Gender', 'Male', 'Female'];
+final List<String> stateList = [
+  'Kerala',
+  'Tamil Nadu',
+  'Karnataka',
+  'Jammu Kashmir',
+  'Goa'
+];
+final List<String> countryList = [
+  'India',
+  'Canada',
+  'London',
+  'America',
+  'Germany',
+  'Poland',
+  'China',
+  'Pakistan',
+  'Brazil',
+];

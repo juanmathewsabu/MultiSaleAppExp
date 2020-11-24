@@ -8,7 +8,7 @@ class DropDownListCommon extends StatefulWidget {
 }
 
 class _DDLState extends State<DropDownListCommon> {
-  String _value = 'Gender';
+  String _value;
   @override
   Widget build(BuildContext context) {
     return Padding(
