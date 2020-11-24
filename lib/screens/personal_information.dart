@@ -39,11 +39,13 @@ class PersonalInformation extends StatelessWidget {
           TextBox(
             labelText: 'Email',
             hintText: 'email@mail.com',
+            keyboardTypeInput: TextInputType.emailAddress,
           ),
           spacing(10.0, 10.0),
           TextBox(
             labelText: 'Phone Number',
             hintText: 'Phone Number',
+            keyboardTypeInput: TextInputType.number,
           ),
           spacing(10.0, 10.0),
           TextBox(
