@@ -20,7 +20,9 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     state = 'State',
     country = 'Country',
     update = 'Update',
-    ok = 'OK';
+    ok = 'OK',
+    hostYourStore = 'Host your Store',
+    becomeHost = 'Become a Host';
 
 final List<String> genderList = ['Male', 'Female'];
 final List<String> stateList = [
