@@ -18,6 +18,7 @@ class HostingScreen extends StatelessWidget {
         body: MainContainer(
           subHeading: '',
           mainHeading: constants.hostYourStore,
+          backgroundColor: Color(0xFFffffffff),
           onPressed: () {
             Navigator.pop(context);
           },
