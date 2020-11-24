@@ -18,8 +18,6 @@ Widget textBox(hintText, labelText,
                   autofocus: false,
                   obscureText: isPassword,
                   decoration: InputDecoration(
-                    // prefixIcon: prefixIcon != null ? Icon(prefixIcon) : null,
-                    // suffixIcon: suffixIcon != null ? Icon(suffixIcon) : null,
                     border: OutlineInputBorder(),
                     contentPadding: EdgeInsets.all(8.0),
                     // hintText: hintText,

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class CustomButton extends StatelessWidget {
   CustomButton(
       {this.text,
+      this.route,
       this.color,
       this.icon,
       this.iconData,
@@ -11,12 +12,16 @@ class CustomButton extends StatelessWidget {
       this.iconColor,
       this.iconSize,
       this.padding,
+      this.textColor,
       @required this.buttonType,
       @required this.onPressed});
   final GestureTapCallback onPressed;
   final String text;
+  //bg color
   final Color color;
+  final Color textColor;
   final Icon icon;
+  final String route;
   final dynamic iconSize;
   final dynamic padding;
   final Color iconColor;
@@ -36,7 +41,9 @@ class CustomButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               side: BorderSide(color: Colors.grey)),
           color: color,
-          onPressed: () {},
+          onPressed: () {
+            if (route != null) Navigator.pushNamed(context, route);
+          },
           child: Row(
             children: <Widget>[
               Expanded(
@@ -51,32 +58,40 @@ class CustomButton extends StatelessWidget {
                   alignment: Alignment.center,
                   child: Text(text,
                       style: TextStyle(
-                          color: Colors.black,
+                          color: textColor,
                           fontSize: 18,
                           fontWeight: FontWeight.w400)),
                 ),
               ),
               Expanded(
                   flex: 1,
-                  child: circleButton(Colors.white,
-                      iconName: iconData, iconSize: 15.0, padding: 5.0)),
+                  child: circleButton(context, Colors.white,
+                      iconName: iconData,
+                      iconSize: 15.0,
+                      padding: 5.0,
+                      route: this.route)),
             ],
           ),
         ),
       );
     }
     if (this.buttonType == 'circleButton') {
-      return circleButton(Colors.white,
-          iconName: icon, iconSize: 15.0, padding: 5.0);
+      return circleButton(context, this.color,
+          iconName: this.iconData,
+          iconSize: this.iconSize,
+          padding: this.padding,
+          route: this.route);
     }
     return null;
   }
 }
 
-Widget circleButton(color, {iconName, iconSize, padding}) {
+Widget circleButton(context, color, {iconName, iconSize, padding, route}) {
   return Center(
     child: RawMaterialButton(
-      onPressed: () {},
+      onPressed: () {
+        if (route != null) Navigator.pushNamed(context, route);
+      },
       elevation: 2.0,
       fillColor: color,
       child: Icon(
