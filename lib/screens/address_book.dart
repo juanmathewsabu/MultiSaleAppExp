@@ -22,6 +22,9 @@ class AddressScreen extends StatelessWidget {
         body: MainContainer(
           subHeading: '',
           mainHeading: 'Address Book',
+          onPressed: () {
+            Navigator.pop(context);
+          },
           bodyContent: ListView(
             children: [
               textBox(
