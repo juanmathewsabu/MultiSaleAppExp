@@ -13,6 +13,7 @@ class PersonalInformation extends StatelessWidget {
     return Scaffold(
         body: MainContainer(
       backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+      backgroundColor: Colors.white,
       subHeading: '',
       mainHeading: 'Personal Informationn',
       onPressed: () {
