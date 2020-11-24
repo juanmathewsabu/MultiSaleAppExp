@@ -1,11 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:login_demo/widgets/containers/boxes.dart';
-import 'package:login_demo/widgets/containers/common_button.dart';
+import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/widgets/controls/address_card.dart';
 import 'package:login_demo/widgets/controls/inputs.dart';
 import '../widgets/containers/mainContainer.dart';
 import 'package:login_demo/dropdown_list.dart';
+import 'package:login_demo/models/constants.dart' as constants;
 
 const kBottomContainerHght = 60.0;
 const kBottomColor = Colors.blue;
@@ -35,14 +36,13 @@ class AddressScreen extends StatelessWidget {
               textBox(
                 'State',
                 'Kerala',
-                suffixIcon: Icons.keyboard_arrow_down,
-              ),
+                suffixIcon: Icon(Icons.keyboard_arrow_down),              ),
               spacing(10.0, 10.0),
               DropdownMenu(),
               textBox(
                 'Country',
                 'India',
-                suffixIcon: Icons.keyboard_arrow_down,
+                suffixIcon: Icon(Icons.keyboard_arrow_down),
               ),
               spacing(10.0, 10.0),
               textBox(
@@ -56,12 +56,11 @@ class AddressScreen extends StatelessWidget {
                 checkColor: Colors.black54,
                 checkActiveColor: Colors.white12,
               ),
-              BottomButton(
-                buttonTitle: 'Add to Address Book',
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute());
-                },
-              ),
+              CustomButton(
+                  buttonType: 'bottomButtonCurved',
+                  text: constants.addToAddressBook,
+                  color: Colors.blue,
+                  onPressed: null),
               CardContainer(
                 icon: Icons.edit_outlined,
                 text: 'Current Address Here',
