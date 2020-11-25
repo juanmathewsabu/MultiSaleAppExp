@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:login_demo/blocs/contact_bloc/contact_bloc.dart';
 import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/containers/contactList.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
@@ -23,36 +25,57 @@ class _ContactScreenState extends State<ContactScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: MainContainer(
-          backgroundImage: AssetImage("assets/images/blue_background.jpg"),
-          mainHeading: constants.contact,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          bodyContent: Container(
-            child: Padding(
-              padding: EdgeInsets.all(8.0),
-              child: ListView(
-                children: <Widget>[
-                  ContactSection(
-                    name: 'Neenu Somy',
-                    image:
-                        "https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-                    number: '94947076088',
-                  ),
-                  Divider(
-                    height: 10.0,
-                  )
-                ],
+    return BlocProvider<ContactBloc>(
+      create: (context) => ContactBloc(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          body: MainContainer(
+            backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+            mainHeading: constants.contact,
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            bodyContent: Container(
+              child: Padding(
+                padding: EdgeInsets.all(8.0),
+                child: BlocBuilder<ContactBloc, ContactState>(
+                    builder: (context, state) {
+                  return SingleChildScrollView(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: <Widget>[
+                        for (int i = 0; i < state.contacts.length; i++)
+                          customListItem(state.contacts[i].name,
+                              state.contacts[i].phoneNumber),
+                      ],
+                    ),
+                  );
+                }),
               ),
             ),
           ),
+          floatingActionButton: addContactButton(),
         ),
-        floatingActionButton: addContactButton(),
       ),
+    );
+  }
+
+  Widget customListItem(String name, String number) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        ContactSection(
+          name: name,
+          image:
+              "https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+          number: number,
+        ),
+        Divider(
+          height: 10.0,
+        )
+      ],
     );
   }
 
@@ -74,14 +97,22 @@ class _ContactScreenState extends State<ContactScreen> {
   }
 
   ListBody generalPopUpChild(BuildContext context) {
+    String name;
+    String phoneNumber;
     return ListBody(
       children: <Widget>[
         TextBox(
+          onChanged: (value) {
+            name = value;
+          },
           labelText: 'Contact Name',
           hintText: 'Contact Name',
         ),
         spacing(10.0, 10.0),
         TextBox(
+          onChanged: (value) {
+            phoneNumber = value;
+          },
           labelText: 'Phone Number',
           hintText: 'Phone Number',
           keyboardTypeInput: TextInputType.number,
@@ -92,6 +123,8 @@ class _ContactScreenState extends State<ContactScreen> {
             text: constants.addContact,
             color: Colors.blue,
             onPressed: () {
+              BlocProvider.of<ContactBloc>(context)
+                  .addContact(name, phoneNumber);
               Navigator.pop(context);
             }),
       ],

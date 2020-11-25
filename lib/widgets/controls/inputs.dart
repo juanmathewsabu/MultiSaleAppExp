@@ -10,13 +10,16 @@ class TextBox extends StatefulWidget {
       this.suffixIcon,
       this.suffixIconButton,
       this.textStyle,
-      this.keyboardTypeInput});
+      this.keyboardTypeInput,
+      this.onChanged});
   final String hintText, labelText;
   final bool isPassword;
   final Icon prefixIcon, suffixIcon;
   final IconButton suffixIconButton;
   final TextStyle textStyle;
   final TextInputType keyboardTypeInput;
+  final Function(String) onChanged;
+
   @override
   _TextBoxState createState() => _TextBoxState();
 }
@@ -36,6 +39,7 @@ class _TextBoxState extends State<TextBox> {
                   elevation: constants.textBoxShadowElevation,
                   shadowColor: Colors.grey,
                   child: TextField(
+                    onChanged: widget.onChanged,
                     keyboardType: widget.keyboardTypeInput,
                     autofocus: false,
                     obscureText: widget.isPassword,
