@@ -15,6 +15,9 @@ class SignUp extends StatelessWidget {
       resizeToAvoidBottomPadding: false,
       body: MainContainer(
         backgroundImage: AssetImage("assets/images/blue_background.jpg"),
+        onPressed: () {
+          Navigator.pop(context);
+        },
         bodyContent: signUpBody(),
       ),
     );
