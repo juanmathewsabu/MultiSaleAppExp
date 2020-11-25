@@ -22,7 +22,15 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     update = 'Update',
     ok = 'OK',
     hostYourStore = 'Host your Store',
-    becomeHost = 'Become a Host';
+    becomeHost = 'Become a Host',
+    addressBook = 'Address Book',
+    address = 'Address',
+    address1 = 'Address 1',
+    city = 'City',
+    pinCode = 'PIN Code',
+    checkBoxText = 'Make it my Default Delivery Address',
+    pinExample = '678976',
+    contact = 'Contact';
 
 final List<String> genderList = ['Male', 'Female'];
 final List<String> stateList = [
