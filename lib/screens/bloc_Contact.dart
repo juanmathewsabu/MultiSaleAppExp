@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:login_demo/blocs/contact_bloc/contact_bloc.dart';
+import 'package:login_demo/models/contactConst.dart';
+
 import 'package:login_demo/widgets/containers/boxes.dart';
 import 'package:login_demo/widgets/containers/contactList.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
@@ -97,22 +99,14 @@ class _ContactScreenState extends State<ContactScreen> {
   }
 
   ListBody generalPopUpChild(BuildContext context) {
-    String name;
-    String phoneNumber;
     return ListBody(
       children: <Widget>[
         TextBox(
-          onChanged: (value) {
-            name = value;
-          },
           labelText: 'Contact Name',
           hintText: 'Contact Name',
         ),
         spacing(10.0, 10.0),
         TextBox(
-          onChanged: (value) {
-            phoneNumber = value;
-          },
           labelText: 'Phone Number',
           hintText: 'Phone Number',
           keyboardTypeInput: TextInputType.number,
@@ -123,8 +117,6 @@ class _ContactScreenState extends State<ContactScreen> {
             text: constants.addContact,
             color: Colors.blue,
             onPressed: () {
-              BlocProvider.of<ContactBloc>(context)
-                  .addContact(name, phoneNumber);
               Navigator.pop(context);
             }),
       ],
