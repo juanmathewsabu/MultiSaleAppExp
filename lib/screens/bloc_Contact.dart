@@ -70,8 +70,6 @@ class _ContactScreenState extends State<ContactScreen> {
       children: [
         ContactSection(
           name: name,
-          image:
-              "https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
           number: number,
         ),
         Divider(
