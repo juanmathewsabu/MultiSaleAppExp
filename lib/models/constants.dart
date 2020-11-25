@@ -30,7 +30,8 @@ final String emailOrMobile = 'Email ID/Mobile Number',
     pinCode = 'PIN Code',
     checkBoxText = 'Make it my Default Delivery Address',
     pinExample = '678976',
-    contact = 'Contact';
+    contact = 'Contact',
+    addContact = 'Add Contact';
 
 final List<String> genderList = ['Male', 'Female'];
 final List<String> stateList = [
