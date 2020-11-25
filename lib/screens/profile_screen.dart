@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import '../widgets/containers/mainContainer.dart';
 import '../widgets/containers/clickableContainer.dart';
 import '../widgets/containers/boxes.dart';
+import '../models/routeConstants.dart';
 
 TextStyle kProfilePageHeadings =
     TextStyle(color: Color(0XFF7f7f7f), fontSize: 13);
@@ -46,36 +47,38 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     Function getRoutes(String text) {
       int i = 0;
+      print('kk $text');
       switch (text) {
         case 'Personal\nInformation':
           {
             return () {
               print(i + 1);
-              Navigator.pushNamed(context, '/personal_information');
+              Navigator.pushNamed(context, personalInformation);
             };
+            break;
           }
         case 'Address Book':
           {
             return () {
-              Navigator.pushNamed(context, '/address_book');
+              Navigator.pushNamed(context, addressBook);
             };
           }
         case 'Terms &\nConditions':
           {
             return () {
-              Navigator.pushNamed(context, '/termsAndConditions');
+              Navigator.pushNamed(context, termsAndConditions);
             };
           }
         case 'Host your Store':
           {
             return () {
-              Navigator.pushNamed(context, '/host_your_store');
+              Navigator.pushNamed(context, hostYourStore);
             };
           }
         case 'Contacts':
           {
             return () {
-              Navigator.pushNamed(context, '/host_your_store');
+              Navigator.pushNamed(context, contactInfo);
             };
           }
         default:
@@ -114,7 +117,7 @@ class ProfileScreen extends StatelessWidget {
                       : list[i + 1] != null
                           ? Expanded(
                               child: ClickableContainer(
-                                onpress: getRoutes(list[i].text),
+                                onpress: getRoutes(list[i + 1].text),
                                 text: list[i + 1].text,
                                 icon: list[i + 1].icon,
                               ),
