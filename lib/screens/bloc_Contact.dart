@@ -1,11 +1,18 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:login_demo/models/contactConst.dart';
+
 import 'package:login_demo/widgets/containers/boxes.dart';
+
 import 'package:login_demo/widgets/containers/contactList.dart';
 import 'package:login_demo/widgets/controls/actionWidgets.dart';
 import 'package:login_demo/widgets/controls/generalPopUp.dart';
 import '../widgets/containers/mainContainer.dart';
 import 'package:login_demo/models/constants.dart' as constants;
 import 'package:login_demo/widgets/controls/inputs.dart';
+
+
 
 class ContactScreen extends StatefulWidget {
   @override
@@ -38,14 +45,12 @@ class _ContactScreenState extends State<ContactScreen> {
               child: ListView(
                 children: <Widget>[
                   ContactSection(
-                    name: 'Neenu Somy',
-                    image:
-                        "https://images.pexels.com/photos/850359/pexels-photo-850359.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+                    name: 'Neenu',
                     number: '94947076088',
                   ),
                   Divider(
                     height: 10.0,
-                  )
+                  ),
                 ],
               ),
             ),
@@ -97,3 +102,5 @@ class _ContactScreenState extends State<ContactScreen> {
     );
   }
 }
+
+
