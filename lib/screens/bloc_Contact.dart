@@ -97,16 +97,23 @@ class _ContactScreenState extends State<ContactScreen> {
   }
 
   ListBody generalPopUpChild(BuildContext context) {
+    String name, number;
     return ListBody(
       children: <Widget>[
         TextBox(
           labelText: 'Contact Name',
           hintText: 'Contact Name',
+          onChanged: (value) {
+            name = value;
+          },
         ),
         spacing(10.0, 10.0),
         TextBox(
           labelText: 'Phone Number',
           hintText: 'Phone Number',
+          onChanged: (value) {
+            number = value;
+          },
           keyboardTypeInput: TextInputType.number,
         ),
         spacing(10.0, 10.0),
@@ -115,6 +122,7 @@ class _ContactScreenState extends State<ContactScreen> {
             text: constants.addContact,
             color: Colors.blue,
             onPressed: () {
+              BlocProvider.of<ContactBloc>(context).addContact(name, number);
               Navigator.pop(context);
             }),
       ],
