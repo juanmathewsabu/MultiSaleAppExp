@@ -4,6 +4,7 @@ import 'package:flutter/rendering.dart';
 import '../widgets/containers/mainContainer.dart';
 import '../widgets/containers/clickableContainer.dart';
 import '../widgets/containers/boxes.dart';
+import '../models/routeConstants.dart';
 
 TextStyle kProfilePageHeadings =
     TextStyle(color: Color(0XFF7f7f7f), fontSize: 13);
@@ -28,34 +29,56 @@ class ProfileScreen extends StatelessWidget {
     CardContent(Icons.store_outlined, 'Favorite Stores'),
   ];
 
+  final List hostingList = [
+    CardContent(Icons.home_outlined, 'Host your Store'),
+    CardContent(Icons.contact_page_outlined, 'Contacts'),
+  ];
+
+  final List helpsAndSupportList = [
+    CardContent(Icons.flare_sharp, 'How Kriips Works'),
+    CardContent(Icons.chat_bubble_outline, 'Feedback'),
+  ];
+  final List quickAccessList2 = [
+    CardContent(Icons.description_outlined, 'Terms &\nConditions'),
+    CardContent(Icons.power_settings_new, 'Logout'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     Function getRoutes(String text) {
       int i = 0;
+      print('kk $text');
       switch (text) {
         case 'Personal\nInformation':
           {
             return () {
               print(i + 1);
-              Navigator.pushNamed(context, '/personal_information');
+              Navigator.pushNamed(context, personalInformation);
             };
+            break;
           }
         case 'Address Book':
           {
             return () {
-              Navigator.pushNamed(context, '/address_book');
+              Navigator.pushNamed(context, addressBook);
             };
           }
         case 'Terms &\nConditions':
           {
             return () {
-              Navigator.pushNamed(context, '/termsAndConditions');
+              Navigator.pushNamed(context, termsAndConditions);
             };
           }
         case 'Host your Store':
           {
             return () {
-              Navigator.pushNamed(context, '/host_your_store');
+              Navigator.pushNamed(context, hostYourStore);
+            };
+          }
+        case 'Contacts':
+          {
+            return () {
+              Navigator.pushNamed(context, contactInfo);
             };
           }
         default:
@@ -63,18 +86,11 @@ class ProfileScreen extends StatelessWidget {
       }
     }
 
-    Container getColumnContent(
-        {String heading,
-        String subHeading1,
-        IconData icon1,
-        String subHeading2,
-        IconData icon2,
-        Color color,
-        int count}) {
+    Container getContent(String heading, List list, String type) {
+      int increment = type == 'row' ? 2 : 1;
       return Container(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Padding(
               padding: const EdgeInsets.all(5.0),
@@ -83,43 +99,7 @@ class ProfileScreen extends StatelessWidget {
                 style: kProfilePageHeadings,
               ),
             ),
-            Container(
-              width: 155,
-              child: ClickableContainer(
-                onpress: getRoutes(subHeading1),
-                text: subHeading1,
-                icon: icon1,
-                iconColor: null,
-              ),
-            ),
-            if (count == 2)
-              Container(
-                width: 155,
-                child: ClickableContainer(
-                  onpress: getRoutes(subHeading2),
-                  text: subHeading2,
-                  icon: icon2,
-                  iconColor: color,
-                ),
-              ),
-          ],
-        ),
-      );
-    }
-
-    Container getRowContent(String heading, List list) {
-      return Container(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Padding(
-              padding: const EdgeInsets.all(5.0),
-              child: Text(
-                heading,
-                style: kProfilePageHeadings,
-              ),
-            ),
-            for (int i = 0; i < list.length; i = i + 2)
+            for (int i = 0; i < list.length; i = i + increment)
               Row(
                 children: [
                   Expanded(
@@ -127,17 +107,22 @@ class ProfileScreen extends StatelessWidget {
                       onpress: getRoutes(list[i].text),
                       text: list[i].text,
                       icon: list[i].icon,
+                      iconColor: list[i].text == 'Logout' ? Colors.pink : null,
                     ),
                   ),
-                  if (list[i + 1] != null)
-                    Expanded(
-                      child: ClickableContainer(
-                        onpress: getRoutes(list[i + 1].text),
-                        text: list[i + 1].text,
-                        icon: list[i + 1].icon,
-                      ),
-                    ),
-                  //  ClickableContainer(),
+                  type == 'column'
+                      ? Expanded(
+                          child: Container(),
+                        )
+                      : list[i + 1] != null
+                          ? Expanded(
+                              child: ClickableContainer(
+                                onpress: getRoutes(list[i + 1].text),
+                                text: list[i + 1].text,
+                                icon: list[i + 1].icon,
+                              ),
+                            )
+                          : null,
                 ],
               )
           ],
@@ -159,33 +144,17 @@ class ProfileScreen extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 spacing(12.0, 0.0),
-                getRowContent('ACCOUNT SETTINGS', accountSettingList),
+                getContent('ACCOUNT SETTINGS', accountSettingList, 'row'),
                 spacing(15.0, 0.0),
-                getColumnContent(
-                    heading: 'HOSTING',
-                    subHeading1: 'Host your Store',
-                    icon1: Icons.home_filled),
+                getContent('HOSTING', hostingList, 'column'),
                 spacing(15.0, 0.0),
-                getColumnContent(
-                    heading: 'HELP & SUPPORT',
-                    subHeading1: 'How Kriips Works',
-                    icon1: Icons.flare_sharp,
-                    subHeading2: 'Feedback',
-                    count: 2,
-                    icon2: Icons.chat_bubble_outline),
+                getContent('HELP & SUPPORT', helpsAndSupportList, 'column'),
                 spacing(15.0, 0.0),
-                getRowContent('REFERRALS & CREDITS', referralList),
+                getContent('REFERRALS & CREDITS', referralList, 'row'),
                 spacing(15.0, 0.0),
-                getRowContent('QUICK ACCESS', quickAccessList1),
+                getContent('QUICK ACCESS', quickAccessList1, 'row'),
                 spacing(15.0, 0.0),
-                getColumnContent(
-                    heading: 'QUICK ACCESS',
-                    subHeading1: 'Terms &\nConditions',
-                    icon1: Icons.description_outlined,
-                    subHeading2: 'Logout',
-                    count: 2,
-                    icon2: Icons.power_settings_new,
-                    color: Color(0XFFFA2F95)),
+                getContent('QUICK ACCESS', quickAccessList2, 'column'),
               ],
             ),
           )),
